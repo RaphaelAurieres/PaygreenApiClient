@@ -1,0 +1,24 @@
+
+services:
+    _defaults:
+        public: true
+
+    payGreen.apiClient.sender.request:
+        class: \PayGreen\ApiClientBundle\Services\RequestSender
+        arguments: ["@logger"]
+
+    payGreen.apiClient.factory.request:
+        class: \PayGreen\ApiClientBundle\Services\RequestFactory
+        arguments:
+            -
+                - "Accept: application/json"
+                - "Content-Type: application/json"
+                - "Cache-Control: no-cache"
+                - "Authorization: Bearer %cp%"
+            -
+                ui: "%ui%"
+                host: "%host%"
+
+    payGreen.apiClient.facade.payment:
+        class: \PayGreen\ApiClientBundle\Services\PaymentFacade
+        arguments: ["@payGreen.apiClient.sender.request", "@payGreen.apiClient.factory.request"]

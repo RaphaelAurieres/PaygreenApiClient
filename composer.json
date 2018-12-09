@@ -1,0 +1,23 @@
+{
+    "name": "paygreen/api-client-bundle",
+    "description": "An SDK to manage payment.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Raphaël Aurières",
+            "email": "raphael.aurieres@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/yaml": "^4.1",
+        "symfony/http-kernel": "^4.1",
+        "symfony/monolog-bundle": "^3.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7"
+    },
+    "autoload": {
+        "psr-4": {"PayGreen\\ApiClientBundle\\": "src/"}
+    }
+}

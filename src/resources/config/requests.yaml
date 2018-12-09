@@ -1,0 +1,89 @@
+
+requests:
+    oauth_access:
+        method: POST
+        url: "{host}/auth"
+
+    validate_shop:
+        method: PATCH
+        url: "{host}/{ui}/shop"
+        additional_headers:
+            - "Authorization: Bearer %cp%"
+
+    refund:
+        method: DELETE
+        url: "{host}/{ui}/payins/transaction/{pid]"
+        additional_headers:
+            - "Authorization: Bearer %cp%"
+
+    are_valid_ids:
+        method: GET
+        url: "{host}/{ui}"
+        additional_headers:
+            - "Authorization: Bearer %cp%"
+
+    get_data:
+        method: GET
+        url: "{host}/{ui}/{type}"
+        additional_headers:
+            - "Authorization: Bearer %cp%"
+
+    delivery:
+        method: PUT
+        url: "{host}/{ui}/payins/transaction/{pid}"
+        additional_headers:
+            - "Authorization: Bearer %cp%"
+
+    create_cash:
+        method: POST
+        url: "{host}/{ui}/payins/transaction/cash"
+        additional_headers:
+            - "Authorization: Bearer %cp%"
+
+    create_subscription:
+        method: POST
+        url: "{host}/{ui}/payins/transaction/subscription"
+        additional_headers:
+            - "Authorization: Bearer %cp%"
+
+    create_tokenize:
+        method: POST
+        url: "{host}/{ui}/payins/transaction/tokenize"
+        additional_headers:
+            - "Authorization: Bearer %cp%"
+
+    create_xtime:
+        method: POST
+        url: "{host}/{ui}/payins/transaction/xTime"
+        additional_headers:
+            - "Authorization: Bearer %cp%"
+
+    get_datas:
+        method: GET
+        url: "{host}/{ui}/payins/transaction/{pid}"
+        additional_headers:
+            - "Authorization: Bearer %cp%"
+
+    get_rounding:
+        method: GET
+        url: "{host}/{ui}/solidarity/{paymentToken}"
+        additional_headers:
+            - "Authorization: Bearer %cp%"
+
+    validate_rounding:
+        method: PATCH
+        url: "{host}/{ui}/solidarity/{paymentToken}"
+        additional_headers:
+            - "Authorization: Bearer %cp%"
+
+    refund_rounding:
+        method: DELETE
+        url: "{host}/{ui}/solidarity/{paymentToken}"
+        additional_headers:
+            - "Authorization: Bearer %cp%"
+
+    send_ccarbone:
+        method: POST
+        url: "{host}/{ui}/payins/ccarbone"
+        additional_headers:
+            - "Authorization: Bearer %cp%"
